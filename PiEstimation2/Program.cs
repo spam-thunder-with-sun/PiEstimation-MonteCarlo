@@ -35,7 +35,7 @@ namespace PiEstimation
                 timer.Start();
 
                 for (int i = 0; i < task.Length; i++)
-                    task[i] = Task.Factory.StartNew(() => calcPI(new FastRandom(), numXtask));
+                    task[i] = Task.Factory.StartNew(() => CalcPI(new FastRandom(), numXtask));
 
                 Task.WaitAll(task);
                 timer.Stop();
@@ -63,7 +63,7 @@ namespace PiEstimation
             }
         }
 
-        static void calcPI(FastRandom rnd, long totNum)
+        static void CalcPI(FastRandom rnd, long totNum)
         {
             double num1, num2;
             long _inside = 0;
